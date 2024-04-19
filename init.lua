@@ -31,6 +31,10 @@ vim.bo.tabstop = 4
 vim.bo.softtabstop = 4
 vim.opt.termguicolors = true
 
+-- disable unused providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+
 -- requiring
 require("config.lazy")
 require("config.hl_groups").run()
