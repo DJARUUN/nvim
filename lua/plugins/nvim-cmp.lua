@@ -1,3 +1,16 @@
+local function border(hl_name)
+	return {
+		{ "╭", hl_name },
+		{ "─", hl_name },
+		{ "╮", hl_name },
+		{ "│", hl_name },
+		{ "╯", hl_name },
+		{ "─", hl_name },
+		{ "╰", hl_name },
+		{ "│", hl_name },
+	}
+end
+
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -31,6 +44,18 @@ return {
 			luasnip.config.setup({})
 
 			cmp.setup({
+				window = {
+					completion = {
+						winhighlight = "Normal:CmpPmenu,CursorLine:TelescopeSelection,Search:None",
+						scrollbar = false,
+						border = border("TelescopeBorder"),
+					},
+					documentation = {
+						border = border("TelescopeBorder"),
+						winhighlight = "Normal:CmpDoc",
+					},
+				},
+
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)

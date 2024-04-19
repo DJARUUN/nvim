@@ -2,6 +2,14 @@ local M = {}
 
 function M.run()
 	-- general
+	vim.api.nvim_create_autocmd("TextYankPost", {
+		desc = "Highlight when yanking (copying) text",
+		group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+		callback = function()
+			vim.highlight.on_yank()
+		end,
+	})
+
 	vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		command = "colorscheme poimandres",
 	})
@@ -30,6 +38,17 @@ function M.run()
 	})
 	vim.api.nvim_create_autocmd({ "VimEnter" }, {
 		command = "highlight WhichKeyBorder guifg=#303340",
+	})
+
+	-- lspreference
+	vim.api.nvim_create_autocmd("User", {
+		command = "highlight LspReferenceRead guibg=NONE gui=underline",
+	})
+	vim.api.nvim_create_autocmd("User", {
+		command = "highlight LspReferenceWrite guibg=NONE gui=underline",
+	})
+	vim.api.nvim_create_autocmd("User", {
+		command = "highlight LspReferenceText guibg=NONE gui=underline",
 	})
 end
 
