@@ -3,8 +3,9 @@ local M = {}
 function M.run()
 	vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous Diagnostic message" })
 	vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next Diagnostic message" })
-	vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic Error messages" })
-	vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic Quickfix list" })
+	vim.keymap.set("n", "<leader>ce", vim.diagnostic.open_float, { desc = "Show diagnostic Error messages" })
+	vim.keymap.set("n", "<leader>cq", vim.diagnostic.setloclist, { desc = "Open diagnostic Quickfix list" })
+	vim.keymap.set("n", "<leader>cs", vim.lsp.buf.hover, { desc = "Open LSP Hover information" })
 
 	vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 	vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
@@ -21,6 +22,8 @@ function M.run()
 		"<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
 		{ noremap = true, desc = "Go to preview" }
 	)
+
+	vim.keymap.set("n", "<leader>t", ":terminal<CR>i", { desc = "Open terminal" })
 end
 
 return M
