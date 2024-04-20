@@ -46,12 +46,12 @@ return {
 			cmp.setup({
 				window = {
 					completion = {
-						winhighlight = "Normal:CmpPmenu,CursorLine:TelescopeSelection,Search:None",
+						border = border("FloatBorder"),
+						winhighlight = "Normal:CmpPmenu,CursorLine:CursorLine,Search:None",
 						scrollbar = false,
-						border = border("TelescopeBorder"),
 					},
 					documentation = {
-						border = border("TelescopeBorder"),
+						border = border("TelescopeResultsBorder"),
 						winhighlight = "Normal:CmpDoc",
 					},
 				},

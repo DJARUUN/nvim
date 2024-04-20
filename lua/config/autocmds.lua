@@ -10,52 +10,41 @@ function M.run()
 		end,
 	})
 
-	vim.api.nvim_create_autocmd("VimEnter", {
-		command = "colorscheme poimandres",
-	})
+	-- color scheme
+	vim.api.nvim_create_autocmd("VimEnter", { command = "colorscheme calvera" })
+	vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, { command = "lua Fix_syntax_hl()" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link @variable @property" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link Normal @property" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link NormalNC @property" })
 
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight NonText guifg=#1b1e28",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight NormalFloat guibg=#1b1e28",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight FloatBorder guifg=#303340",
-	})
+	-- statusline
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link StatusLineTerm StatusLineTermNC" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link StatusLineTermNC StatusLineTermNC" })
 
-	-- whichkey
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight WhichKeyFloat guibg=#1b1e28",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight WhichKeySeparator guifg=#a6accd",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight WhichKeyDesc guifg=#add7ff",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight WhichKeyGroup guifg=#91b4d5",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight WhichKeyBorder guifg=#303340",
-	})
+	-- defaults ** use these for other things **
+	vim.api.nvim_create_autocmd("User", { command = "highlight! NonText guifg=#0c0c1f" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link NormalFloat TelescopeResultsBorder" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link FloatBorder TelescopePromptBorder" })
 
 	-- lspreference
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight LspReferenceRead guibg=NONE gui=underline",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight LspReferenceWrite guibg=NONE gui=underline",
-	})
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight LspReferenceText guibg=NONE gui=underline",
-	})
+	vim.api.nvim_create_autocmd("User", { command = "highlight! LspReferenceRead guibg=NONE guifg=NONE gui=underline" })
+	vim.api.nvim_create_autocmd(
+		"User",
+		{ command = "highlight! LspReferenceWrite guibg=NONE guifg=NONE gui=underline" }
+	)
+	vim.api.nvim_create_autocmd("User", { command = "highlight! LspReferenceText guibg=NONE guifg=NONE gui=underline" })
 
 	-- lazygit
-	vim.api.nvim_create_autocmd("User", {
-		command = "highlight LazyGitBorder guifg=#303340",
-	})
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link LazyGitBorder NormalFloat" })
+
+	-- cursor line
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link CursorLine SneakScope" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link CursorColumn SneakScope" })
+
+	-- indentblankline
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link @ibl.whitespace.char.1 Comment" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link @ibl.indent.char.1 Comment" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link GitSignsCurrentLineBlame Comment" })
 end
 
 return M
