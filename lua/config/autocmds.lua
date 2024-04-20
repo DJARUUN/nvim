@@ -47,6 +47,9 @@ function M.run()
 
 	-- gitsigns
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link GitSignsCurrentLineBlame Comment" })
+
+	-- flash
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link FlashLabel FlashCursor" })
 end
 
 return M
