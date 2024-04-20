@@ -18,11 +18,22 @@ return {
 
 			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 		},
+
 		config = function()
 			require("telescope").setup({
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
+					},
+				},
+				defaults = {
+					mappings = {
+						n = {
+							["x"] = require("telescope.actions").delete_buffer,
+						},
+						i = {
+							["<M-x>"] = require("telescope.actions").delete_buffer,
+						},
 					},
 				},
 			})
@@ -42,7 +53,9 @@ return {
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search Diagnostics" })
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search Resume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
-			vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
+			vim.keymap.set("n", "<leader><leader>", function()
+				builtin.buffers({ sort_lastused = true, ignore_current_buffer = true })
+			end, { desc = "Find existing buffers" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()

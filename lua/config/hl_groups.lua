@@ -26,7 +26,6 @@ function M.run()
 	update_hl("@type.builtin", { italic = true })
 	update_hl("StorageClass", { italic = true })
 
-	-- update_hl("MiniIndentscopeSymbol", { fg = "#4f5258" })
 	update_hl("IblIndent", { fg = "#303340" })
 	update_hl("IblWhitespace", { fg = "#303340" })
 	update_hl("GitSignsCurrentLineBlame", { fg = "#303340" })

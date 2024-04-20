@@ -4,7 +4,16 @@ return {
 	config = function()
 		local which_key = require("which-key")
 
-		which_key.setup()
+		which_key.setup({
+			window = {
+				border = "rounded",
+			},
+			icons = {
+				breadcrumb = "»",
+				separator = "->",
+				group = "+",
+			},
+		})
 
 		which_key.register({
 			["<leader>c"] = { name = "Code", _ = "which_key_ignore" },

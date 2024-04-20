@@ -1,10 +1,15 @@
+-- vim plug
+local Plug = vim.fn["plug#"]
+vim.call("plug#begin")
+vim.call("plug#end")
+
 -- general setup
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 vim.opt.relativenumber = true
 vim.opt.showmode = false
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -37,7 +42,7 @@ vim.g.loaded_perl_provider = 0
 
 -- requiring
 require("config.lazy")
-require("config.hl_groups").run()
 require("config.autocmds").run()
 require("config.lsp_config").run()
 require("config.keymaps").run()
+require("config.hl_groups").run()
