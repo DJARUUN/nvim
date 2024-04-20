@@ -13,7 +13,7 @@ function M.run()
 	-- color scheme
 	vim.api.nvim_create_autocmd("VimEnter", { command = "colorscheme calvera" })
 	vim.api.nvim_create_autocmd({ "VimEnter", "ColorScheme" }, { command = "lua Fix_syntax_hl()" })
-	vim.api.nvim_create_autocmd("User", { command = "highlight! link @variable @property" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link @variable @lsp.type.property" })
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link Normal @property" })
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link NormalNC @property" })
 
@@ -42,8 +42,10 @@ function M.run()
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link CursorColumn SneakScope" })
 
 	-- indentblankline
-	vim.api.nvim_create_autocmd("User", { command = "highlight! link @ibl.whitespace.char.1 Comment" })
-	vim.api.nvim_create_autocmd("User", { command = "highlight! link @ibl.indent.char.1 Comment" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link @ibl.whitespace.char.1 LineNr" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! @ibl.indent.char.1 guifg=#121230" })
+
+	-- gitsigns
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link GitSignsCurrentLineBlame Comment" })
 end
 

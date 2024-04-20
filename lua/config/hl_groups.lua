@@ -12,6 +12,7 @@ function Fix_syntax_hl()
 	update_hl("Comment", { italic = true })
 	update_hl("String", { italic = false })
 
+	update_hl("Keyword", { italic = true })
 	update_hl("@keyword.return", { italic = true })
 	update_hl("@keyword.function", { italic = true })
 
@@ -20,7 +21,7 @@ function Fix_syntax_hl()
 	update_hl("@function.method.call", { italic = true })
 	update_hl("Function", { italic = true })
 	update_hl("Define", { italic = true })
-	update_hl("@property", { italic = true })
+	update_hl("@property", { italic = false })
 
 	update_hl("@type", { italic = true })
 	update_hl("@type.builtin", { italic = true })

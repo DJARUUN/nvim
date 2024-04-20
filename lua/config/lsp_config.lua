@@ -13,6 +13,10 @@ function M.run()
 		root_dir = root_pattern("go.work", "go.mod", ".git"),
 		single_file_support = true,
 	})
+
+	lspconfig.zls.setup({})
+
+	lspconfig.ols.setup({})
 end
 
 return M

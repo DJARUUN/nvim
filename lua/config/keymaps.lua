@@ -12,8 +12,8 @@ function M.run()
 	vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 	vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
-	vim.keymap.set("n", "<leader>x", ":bd<CR>", { desc = "Close current buffer" })
-	vim.keymap.set("n", "<leader>X", ":bw<CR>", { desc = "Wipeout current buffer" })
+	vim.keymap.set("n", "<leader>x", ":bd!<CR>", { desc = "Close current buffer" })
+	vim.keymap.set("n", "<leader>X", ":bw!<CR>", { desc = "Wipeout current buffer" })
 
 	vim.keymap.set("n", "<leader>rr", function()
 		return ":IncRename " .. vim.fn.expand("<dword>")
