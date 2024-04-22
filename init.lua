@@ -35,6 +35,7 @@ vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4
 vim.bo.softtabstop = 4
 vim.opt.termguicolors = true
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- disable unused providers
 vim.g.loaded_node_provider = 0

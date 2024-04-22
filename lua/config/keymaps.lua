@@ -30,6 +30,8 @@ function M.run()
 	vim.keymap.set("t", "<esc><esc>", function()
 		vim.api.nvim_command("stopinsert")
 	end)
+
+	vim.keymap.set("n", "<leader>-", ":Oil<CR>", { desc = "Open Oil" })
 end
 
 return M

@@ -54,7 +54,7 @@ return {
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search Resume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader><leader>", function()
-				builtin.buffers({ sort_lastused = true, ignore_current_buffer = true })
+				builtin.buffers({ sort_lastused = true, ignore_current_buffer = false })
 			end, { desc = "Find existing buffers" })
 
 			-- Slightly advanced example of overriding default behavior and theme

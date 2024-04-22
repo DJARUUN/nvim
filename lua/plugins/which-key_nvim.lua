@@ -22,6 +22,7 @@ return {
 			["<leader>s"] = { name = "Search", _ = "which_key_ignore" },
 			["<leader>w"] = { name = "Workspace", _ = "which_key_ignore" },
 			["<leader>h"] = { name = "Git Hunk", _ = "which_key_ignore" },
+			["<leader>S"] = { name = "Sessions", _ = "which_key_ignore" },
 		})
 
 		which_key.register({
