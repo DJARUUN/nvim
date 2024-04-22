@@ -17,6 +17,8 @@ function M.run()
 	lspconfig.zls.setup({})
 
 	lspconfig.ols.setup({})
+
+	lspconfig.intelephense.setup({})
 end
 
 return M
