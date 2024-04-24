@@ -19,6 +19,8 @@ function M.run()
 	lspconfig.ols.setup({})
 
 	lspconfig.intelephense.setup({})
+
+	lspconfig.gleam.setup({})
 end
 
 return M

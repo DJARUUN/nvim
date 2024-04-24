@@ -50,6 +50,9 @@ function M.run()
 
 	-- flash
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link FlashLabel FlashCursor" })
+
+	-- nvim-ufo
+	vim.api.nvim_create_autocmd("User", { command = "highlight! link FoldColumn IndentBlanklineChar" })
 end
 
 return M
