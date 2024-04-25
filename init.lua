@@ -1,4 +1,4 @@
--- vim plug
+-- -- vim plug
 -- local Plug = vim.fn["plug#"]
 -- vim.call("plug#begin")
 -- vim.call("plug#end")
@@ -36,6 +36,12 @@ vim.bo.tabstop = 4
 vim.bo.softtabstop = 4
 vim.opt.termguicolors = true
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+-- folding
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
 -- disable unused providers
 vim.g.loaded_node_provider = 0

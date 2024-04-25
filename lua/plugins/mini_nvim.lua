@@ -8,7 +8,9 @@ return {
 		surround.setup({})
 
 		local starter = require("mini.starter")
-		starter.setup({})
+		starter.setup({
+			query_updaters = "abcdefghijklmnopqrstuvwxyz0123456789_.",
+		})
 
 		local sessions = require("mini.sessions")
 		sessions.setup({
