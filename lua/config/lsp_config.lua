@@ -18,9 +18,13 @@ function M.run()
 
 	lspconfig.ols.setup({})
 
-	lspconfig.intelephense.setup({})
+	lspconfig.intelephense.setup({
+		root_dir = root_pattern(".git"),
+	})
 
 	lspconfig.gleam.setup({})
+
+	lspconfig.tsserver.setup({})
 end
 
 return M
