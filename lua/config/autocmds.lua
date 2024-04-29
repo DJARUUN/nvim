@@ -23,8 +23,10 @@ function M.run()
 
 	-- defaults ** use these for other things **
 	vim.api.nvim_create_autocmd("User", { command = "highlight! NonText guifg=#0c0c1f" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! TelescopePromptBorder guibg=#0c0c1f" })
+	vim.api.nvim_create_autocmd("User", { command = "highlight! TelescopeResultsBorder guibg=#0c0c1f" })
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link NormalFloat TelescopeResultsBorder" })
-	vim.api.nvim_create_autocmd("User", { command = "highlight! link FloatBorder TelescopePromptBorder" })
+	vim.api.nvim_create_autocmd("VimEnter", { command = "highlight! link FloatBorder TelescopePromptBorder" })
 
 	-- lspreference
 	vim.api.nvim_create_autocmd("User", { command = "highlight! LspReferenceRead guibg=NONE guifg=NONE gui=underline" })
@@ -53,6 +55,9 @@ function M.run()
 
 	-- nvim-ufo
 	vim.api.nvim_create_autocmd("User", { command = "highlight! link FoldColumn IndentBlanklineChar" })
+
+	-- wilder
+	vim.api.nvim_create_autocmd("User", { command = "highlight! WilderPoppupMenuAccent guibg=#0c0c1f" })
 end
 
 return M

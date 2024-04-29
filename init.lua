@@ -1,8 +1,3 @@
--- -- vim plug
--- local Plug = vim.fn["plug#"]
--- vim.call("plug#begin")
--- vim.call("plug#end")
-
 -- general setup
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
